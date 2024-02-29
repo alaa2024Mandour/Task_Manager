@@ -18,27 +18,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider (create: (BuildContext context) => TaskAppCubit()..createDatabase()),
-      ],
-      child: BlocConsumer<TaskAppCubit , TaskAppStates>(
-        listener: (context,state) {},
-        builder: (context , state )=> MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-        scaffoldBackgroundColor: Colors.black,
-        primarySwatch : Colors.orange ,
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: orangeColor,
-        unselectedItemColor: Colors.grey,
-            backgroundColor: gryColor,
-        )
-      ),
-      home: TasksScreen(),
+    return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+    scaffoldBackgroundColor: Colors.black,
+    primarySwatch : Colors.orange ,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    type: BottomNavigationBarType.fixed,
+    selectedItemColor: orangeColor,
+    unselectedItemColor: Colors.grey,
+        backgroundColor: gryColor,
+    )
     ),
-      ),
+    home: TasksScreen(),
     );
   }
 }
